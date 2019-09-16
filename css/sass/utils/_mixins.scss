@@ -1,0 +1,49 @@
+@mixin clearfix {
+     &:after {
+          content: "";
+          display: table;
+          clear: both;
+     }
+}
+
+// Centreren
+@mixin push--auto {
+    margin: {
+        left: auto;
+        right: auto;
+    }
+}
+
+// Pseudo selector for ::after and ::before
+@mixin pseudo($display: block, $pos: absolute, $content: ''){
+     content: $content;
+     display: $display;
+     position: $pos;
+}
+
+
+
+// Calculate REM from pixels | Use rem mixin to add size in REM.
+@function calculateRem($size) {
+     $remSize: $size / 16px;
+     @return $remSize * 1rem;
+}
+@mixin rem($size) {
+     font-size: $size;
+     font-size: calculateRem($size);
+}
+
+// Breakpoints
+@mixin for-size($size) {
+     @if $size == phone-only {
+          @media (max-width: 599px) { @content; }
+     } @else if $size == tablet-portrait-up {
+          @media (min-width: 600px) { @content; }
+     } @else if $size == tablet-landscape-up {
+          @media (min-width: 900px) { @content; }
+     } @else if $size == desktop-up {
+          @media (min-width: 1200px) { @content; }
+     } @else if $size == big-desktop-up {
+          @media (min-width: 1800px) { @content; }
+     }
+}

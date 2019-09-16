@@ -1,0 +1,17 @@
+@import
+     'utils/variables',
+     'utils/functions',
+     'utils/mixins';
+
+@import
+     'base/reset',
+     'base/base',
+     'base/animations';
+
+@import
+     'layout/header',
+     'layout/gameboard',
+     'layout/footer';
+
+@import
+     'components/buttons';

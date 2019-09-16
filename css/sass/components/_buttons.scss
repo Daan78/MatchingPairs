@@ -1,0 +1,15 @@
+.btn {
+    width: auto;
+    height: auto;
+    padding: 5px 35px;
+    color: $color-sub;
+    font-family: $font-main;
+    font-size: 24px;
+    background-color: #C5FFCB;
+    border: 2px solid $color-sub;
+    border-radius: 20px;
+    cursor: pointer;
+    display: block;
+    margin: 25px auto;
+    outline-style: none;
+}
